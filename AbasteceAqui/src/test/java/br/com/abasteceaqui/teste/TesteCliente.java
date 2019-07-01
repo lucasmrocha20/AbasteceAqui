@@ -48,18 +48,15 @@ public class TesteCliente {
 			}
 		}
 
-		// Incluso por Luciano e Adrielly em 27/11/2018
+		
 		Assert.assertNotNull(clientes);
-		//
-
-		// Marcela, qualquer coisa voce pode apagar essas 2 linhas de codigos que est„o
-		// abaixo.
+		
 		Cliente cliente2 = repCliente.buscarPorCodigo(codigoCliente);
 		Assert.assertEquals("Cardoso Marcela LTDA", cliente2.getRazaoSocial());
 
 	}
 
-	// Alterei o nome do mÈtodo de "TodasClientes" para "TodosClientes"
+	// Alterei o nome do m√©todo de "TodasClientes" para "TodosClientes"
 	@Test
 	public void deveListaTodosClientesTest() {
 		ClienteController repCliente = new ClienteController();
@@ -68,7 +65,7 @@ public class TesteCliente {
 		// boolean listou = lista.size() > 0;
 		// Assert.assertTrue(listou);
 
-		// Incluso por Luciano e Adrielly em 27/11/2018
+		
 		int contAux = 0;
 		for (Cliente l : lista) {
 			System.out.println(l);
@@ -91,7 +88,7 @@ public class TesteCliente {
 		// Incluso por Luciano e Adrielly em 27/11/2018
 		boolean flag = false;
 
-		//Caso n„o funcione com o Scanner, altera para uma vari·vel String e atribuir algum valor.
+		//Caso n√£o funcione com o Scanner, altera para uma vari√°vel String e atribuir algum valor.
 		Scanner sc = new Scanner(System.in);
 		String resp = sc.next();
 		sc.close();
@@ -129,7 +126,6 @@ public class TesteCliente {
 		Cliente cliente = repCliente.buscarPorCodigo(codigoCliente);
 		// repCliente.deletar(cliente);
 
-		// Incluso por Luciano e Adrielly em 27/11/2018
 		List<Cliente> lista = repCliente.listarCliente();
 
 		Cliente temporario = cliente;
