@@ -85,7 +85,6 @@ public class TesteCliente {
 			System.out.println("TESTAAAAAAAAAAAAAAANDO" + cliente);
 		}
 
-		// Incluso por Luciano e Adrielly em 27/11/2018
 		boolean flag = false;
 
 		//Caso não funcione com o Scanner, altera para uma variável String e atribuir algum valor.
