@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<f:facet name="first">
+			<h:outputStylesheet library="css" name="cadastro.css" />
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>Cadastro Cliente</title>
+		</f:facet>
+	</h:head>
+
+	<h:body>
+		<ui:include src="" />
+		<div id="conteudo-pagina-principal">
+			<h:form>
+				<p:fieldset styleClass="fCadastro" legend="CADASTRAR CLIENTE">
+					<p:panelGrid styleClass="cadgrid" columns="3">
+						<h:outputText styleClass="caixadetexto" value="CNPJ:" />
+						<p:inputText id="cadcnpj"
+							value="#{postoController.cadPosto.nomeFantasia}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="cadcnpj" />
+
+						<h:outputText styleClass="caixadetexto" value="Razão Social:" />
+						<p:inputText id="cadrsocial"
+							value="#{postoController.cadPosto.cnpj}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="cadrsocial" />
+
+						<h:outputText styleClass="caixadetexto" value="Fone:" />
+						<p:inputText id="cadfone"
+							value="#{postoController.cadPosto.precoAlcool}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="cadfone" />
+					</p:panelGrid>
+				</p:fieldset>
+				<br />
+				<p:fieldset styleClass="fCadastro" legend="ENDEREÇO">
+					<p:panelGrid styleClass="cadgrid" columns="3">
+
+						<h:outputText styleClass="caixadetexto" value="Rua:" />
+						<p:inputText id="rua" value="#{postoController.cadPosto.rua}"
+							required="true" requiredMessage="Falta preencher" />
+						<p:message for="rua" />
+
+						<h:outputText styleClass="caixadetexto" value="Número:" />
+						<p:inputText id="numero"
+							value="#{postoController.cadPostoe.numero}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="numero" />
+
+						<h:outputText styleClass="caixadetexto" value="Bairro:" />
+						<p:inputText id="bairro"
+							value="#{postoController.cadPosto.bairro}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="bairro" />
+
+						<h:outputText styleClass="caixadetexto" value="Cidade:" />
+						<p:inputText id="cidade"
+							value="#{postoController.cadPosto.cidade}" required="true"
+							requiredMessage="Falta preencher" />
+						<p:message for="cidade" />
+
+						<h:outputText styleClass="caixadetexto" value="CEP:" />
+						<p:inputText id="cep" value="#{postoController.cadPosto.cep}"
+							required="true" requiredMessage="Falta preencher" />
+						<p:message for="cep" />
+
+					</p:panelGrid>
+				</p:fieldset>
+				<br />
+
+				<p:commandButton styleClass="botao" value="Cadastrar"
+					oncomplete="PF('widDialConfirmaCad').show()" />
+
+
+				<p:dialog visible="false" id="dialConfirmaCad" modal="true"
+					widgetVar="widDialConfirmaCad">
+					<p:fieldset legend="Deseja realmente cadastrar?">
+						<p:commandButton value="Sim" action="#{postoController.inserir}"
+							oncomplete="PF('widDialConfirmaCad').hide()" />
+						<p:commandButton value="Não"
+							oncomplete="PF('widDialConfirmaCad').hide()" />
+					</p:fieldset>
+				</p:dialog>
+			</h:form>
+		</div>
+	</h:body>
+</f:view>
+</html>
